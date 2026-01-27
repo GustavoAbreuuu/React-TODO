@@ -13,6 +13,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*::after {
+  box-sizing: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -33,6 +54,32 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+input, 
+select, 
+textarea {
+  border: none;
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+
+}
+
+.main {
+
+}
+
+.title {
+  color: #fab1a0;
+  font-size: 64px;
+  font-weight: 100;
+  text-align: center;
 }
 
 button {
