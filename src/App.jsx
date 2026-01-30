@@ -39,8 +39,14 @@ const App = () => {
   };
 
   const onToggle = (todo) => {
-    console.log('toggle', todo)
-  }
+    setTodos(
+      todos.map((obj) => obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj)
+    );
+  };
+
+  const onRemove = (todo) => {
+    setTodos(todos.filter((obj) => obj.id !== todo.id));
+  };
 
   return (
     <div id='app' className='container'>
@@ -54,7 +60,8 @@ const App = () => {
         <ul className='todo-list'>
           {todos.map((todo) => (
             <li key={todo.id.toString()}>
-              <span className='todo'
+              <span 
+                className={['todo', todo.checked ? 'checked' : ''].join(' ')}
                 onClick={() => onToggle(todo)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === '') onToggle(todo);
@@ -64,9 +71,12 @@ const App = () => {
               >
                 {todo.title}
               </span>
-              <button className='remove' type='button'>
+              <button className='remove' 
+              type='button'
+              onClick = {() => onRemove(todo)}
+              >
                 <MdDelete size={28} />
-              </button>
+              </button> 
             </li>
           ))}
         </ul>
