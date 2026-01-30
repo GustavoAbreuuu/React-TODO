@@ -1,42 +1,21 @@
 import { useState } from 'react';
 import { MdDelete } from 'react-icons/md';
+import NewTodo from './components';
 import './App.css';
 
 const App = () => {
-  const ESCAPE_KEY = 27;
-  const ENTER_KEY = 13;
-
   const [todos, setTodos] = useState([]);
-  const [value, setValue] = useState('');
 
-  const erase = () => {
-    setValue('');
-  };
-
-  const submit = () => {
+  const onNewTodo = (value) => {
     setTodos([
       ...todos,
       {
         id: new Date().getTime(),
         title: value,
         checked: false,
-      }
+      },
     ]);
-
-    erase();
-  };
-
-  const onChange = (event) => {
-    setValue(event.target.value)
-  };
-
-  const onKeyDown = (event) => {
-    if (event.which === ENTER_KEY) {
-      submit();
-    } else if (event.which === ESCAPE_KEY) {
-      erase();
-    }
-  };
+  }
 
   const onToggle = (todo) => {
     setTodos(
@@ -55,12 +34,11 @@ const App = () => {
       </header>
 
       <main>
-        <input type="text" className='new-todo' placeholder='o que precisa ser feito?' value={value}
-          onChange={onChange} onKeyDown={onKeyDown} />
+        <NewTodo onNewTodo={onNewTodo} />
         <ul className='todo-list'>
           {todos.map((todo) => (
             <li key={todo.id.toString()}>
-              <span 
+              <span
                 className={['todo', todo.checked ? 'checked' : ''].join(' ')}
                 onClick={() => onToggle(todo)}
                 onKeyDown={(e) => {
@@ -71,12 +49,12 @@ const App = () => {
               >
                 {todo.title}
               </span>
-              <button className='remove' 
-              type='button'
-              onClick = {() => onRemove(todo)}
+              <button className='remove'
+                type='button'
+                onClick={() => onRemove(todo)}
               >
                 <MdDelete size={28} />
-              </button> 
+              </button>
             </li>
           ))}
         </ul>
