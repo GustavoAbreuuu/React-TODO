@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const NewTodo = ({ onNewTodo }) => {
     const ESCAPE_KEY = 27;
@@ -7,11 +8,11 @@ const NewTodo = ({ onNewTodo }) => {
     const [value, setValue] = useState('');
 
     const erase = () => {
-        setValue('');
+        setValue('');   
     };
 
     const submit = () => {
-        if (!onNewTodo) {
+        if (onNewTodo && value.trim()) {
             onNewTodo(value);
             erase();
         }
@@ -39,6 +40,10 @@ const NewTodo = ({ onNewTodo }) => {
             onKeyDown={onKeyDown}
         />
     );
-}
+};
 
-export default NewTodo
+NewTodo.propTypes = {
+    onNewTodo: PropTypes.func.isRequired,
+};
+
+export default NewTodo;
