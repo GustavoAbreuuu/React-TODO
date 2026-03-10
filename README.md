@@ -1,5 +1,5 @@
 # React TODO App
-***Uma aplicação Front-end moderna, minimalista e acessível para gerenciamento de tarefas diárias, otimizada com as ferramentas mais recentes do ecossistema React.
+***Uma aplicação Front-end moderna, minimalista e acessível para gerenciamento de tarefas diárias, otimizada com as ferramentas mais recentes do ecossistema React.***
 
 ## 📖 Sobre o Projeto
 
