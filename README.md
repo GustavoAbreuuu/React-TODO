@@ -1,18 +1,40 @@
-# React + Vite
+# React TODO App
+***Uma aplicação Front-end moderna, minimalista e acessível para gerenciamento de tarefas diárias, otimizada com as ferramentas mais recentes do ecossistema React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Sobre o Projeto
 
-Currently, two official plugins are available:
+O **React Todo App** é uma Single Page Application (SPA) desenvolvida para oferecer uma experiência de usuário fluida e direta na criação e organização de listas de tarefas. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O grande diferencial técnico deste projeto é a adoção de tecnologias de vanguarda: a aplicação roda na novíssima versão do **React (v19)** combinada com o **Vite (v7)**, e já implementa o **React Compiler** (`babel-plugin-react-compiler`). Isso significa que a aplicação possui otimização e memoização de renderização geradas automaticamente sob o capô, garantindo máxima performance sem a necessidade de poluir o código com hooks de otimização manuais (como `useMemo` ou `useCallback`).
 
-## React Compiler
+## 🛠️ Tecnologias e Ferramentas
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+O projeto foi construído com uma stack moderna focada em performance, acessibilidade e experiência de desenvolvimento:
 
-Note: This will impact Vite dev & build performances.
+* **Core:** ReactJS v19 (Hooks, Functional Components)
+* **Build Tool:** Vite v7 (Para um HMR instantâneo e builds extremamente rápidos)
+* **Otimização:** Babel Plugin React Compiler
+* **Estilização:** CSS Tradicional (Modularizado por componentes e variáveis CSS no escopo global)
+* **Ícones:** React Icons (Material Design Icons)
+* **Qualidade de Código:** ESLint (Padrão Airbnb), Prettier e PropTypes rigoroso.
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades em Destaque
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Gestão Ágil de Tarefas
+Interface limpa e intuitiva para entrada de dados. O estado da aplicação é gerenciado no componente pai (`App.jsx`) utilizando o princípio da imutabilidade do React para adicionar, alternar o status (concluído/pendente) e remover tarefas instantaneamente.
+
+### 2. Foco em Acessibilidade (A11y)
+A aplicação foi construída pensando em todos os usuários. Elementos interativos não nativos (como o texto da tarefa) possuem marcação semântica (`role='button'`, `tabIndex={0}`) e suporte completo a navegação por teclado:
+* **Enter / Espaço:** Alterna o status da tarefa.
+* **Escape:** Limpa o campo de nova tarefa rapidamente.
+
+### 3. Responsividade e Temas Automáticos
+Layout adaptativo focado na usabilidade em qualquer dispositivo, utilizando `flexbox` e limitação de largura (`max-width: 48rem`) para não quebrar a ergonomia da leitura. Além disso, a aplicação detecta automaticamente a preferência de cor do sistema operacional do usuário (`prefers-color-scheme`), adaptando as cores para modos claro ou escuro.
+
+## 🧠 Destaques da Arquitetura
+
+O código foi organizado seguindo princípios de **Clean Code** e separação de responsabilidades:
+
+* **Modularização e Componentização:** A lógica de negócios e o estado residem no topo (`App.jsx`), enquanto a interface é dividida em componentes de apresentação puros (`NewTodo` e `TodoList`). Cada componente possui seu próprio diretório contendo seu `index.js` e seu `style.css`, facilitando a manutenção isolada.
+* **Validação de Tipos Rigorosa:** Para garantir a integridade da aplicação e prevenir bugs silenciosos, o projeto faz uso extensivo de `PropTypes`. Arrays de objetos complexos (como a lista de `todos`) são validados propriedade por propriedade (`id`, `title`, `checked`), garantindo que a renderização sempre receba os dados no formato esperado.
+* **Variáveis de CSS Centralizadas:** Toda a base visual (cores, reset, tipografia base) está definida em variáveis e tags baseadas no pseudo-seletor `:root` dentro de `global.css`, facilitando a manutenção e padronização.
