@@ -38,3 +38,35 @@ O código foi organizado seguindo princípios de **Clean Code** e separação de
 * **Modularização e Componentização:** A lógica de negócios e o estado residem no topo (`App.jsx`), enquanto a interface é dividida em componentes de apresentação puros (`NewTodo` e `TodoList`). Cada componente possui seu próprio diretório contendo seu `index.js` e seu `style.css`, facilitando a manutenção isolada.
 * **Validação de Tipos Rigorosa:** Para garantir a integridade da aplicação e prevenir bugs silenciosos, o projeto faz uso extensivo de `PropTypes`. Arrays de objetos complexos (como a lista de `todos`) são validados propriedade por propriedade (`id`, `title`, `checked`), garantindo que a renderização sempre receba os dados no formato esperado.
 * **Variáveis de CSS Centralizadas:** Toda a base visual (cores, reset, tipografia base) está definida em variáveis e tags baseadas no pseudo-seletor `:root` dentro de `global.css`, facilitando a manutenção e padronização.
+
+## 🚀 Como executar o projeto localmente
+
+Para clonar e executar esta aplicação, você precisará do [Git](https://git-scm.com) e do [Node.js](https://nodejs.org/en/) instalados.
+
+No seu terminal, digite os seguintes comandos:
+
+### 1. Clone o repositório
+```bash
+git clone [https://github.com/seu-usuario/react-todo.git](https://github.com/seu-usuario/react-todo.git)
+```
+### 2. Acesse a pasta do projeto
+```bash
+cd react-todo
+```
+### 3. Instale as dependências
+```bash
+npm install
+```
+### 4. Execute a aplicação em modo de desenvolvimento
+```bash
+npm run dev
+```
+**A aplicação será iniciada e o terminal mostrará o endereço local (geralmente http://localhost:5173). Basta abrir esse link no navegador.**
+
+## Build para Produção
+```bash
+npm run build
+```
+** Lembre-se de apenas trocar o link "https://github.com/seu-usuario/react-todo.git" pela URL real do seu repositório quando for subir o projeto.**
+
+
