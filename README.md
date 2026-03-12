@@ -1,6 +1,8 @@
 # React TODO App
 **Uma aplicação Front-end moderna, minimalista e acessível para gerenciamento de tarefas diárias, otimizada com as ferramentas mais recentes do ecossistema React.**
 
+🔗 **[Clique aqui para acessar o projeto online](https://react-todo-tan.vercel.app/)**
+
 ## 📖 Sobre o Projeto
 
 O **React Todo App** é uma Single Page Application (SPA) desenvolvida para oferecer uma experiência de usuário fluida e direta na criação e organização de listas de tarefas. 
@@ -20,6 +22,8 @@ O projeto foi construído com uma stack moderna focada em performance, acessibil
 
 ## ✨ Funcionalidades em Destaque
 
+<img width="1918" height="870" alt="Captura de tela 2026-03-12 134217" src="https://github.com/user-attachments/assets/4a63906a-b909-4bc8-aafe-64bcfb8f8b79" />
+
 ### 1. Gestão Ágil de Tarefas
 Interface limpa e intuitiva para entrada de dados. O estado da aplicação é gerenciado no componente pai (`App.jsx`) utilizando o princípio da imutabilidade do React para adicionar, alternar o status (concluído/pendente) e remover tarefas instantaneamente.
 
@@ -30,6 +34,9 @@ A aplicação foi construída pensando em todos os usuários. Elementos interati
 
 ### 3. Responsividade e Temas Automáticos
 Layout adaptativo focado na usabilidade em qualquer dispositivo, utilizando `flexbox` e limitação de largura (`max-width: 48rem`) para não quebrar a ergonomia da leitura. Além disso, a aplicação detecta automaticamente a preferência de cor do sistema operacional do usuário (`prefers-color-scheme`), adaptando as cores para modos claro ou escuro.
+
+4. Feedback Visual de Conclusão
+Ao clicar diretamente no texto de um item da lista, a tarefa tem seu status alternado e recebe instantaneamente uma estilização de texto riscado e uma cor mais suave. Isso fornece um feedback visual claro, satisfatório e imediato para o usuário sobre o progresso das suas tarefas diárias.
 
 ## 🧠 Destaques da Arquitetura
 
